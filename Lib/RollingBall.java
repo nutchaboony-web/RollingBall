@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.event.*;
 public class RollingBall extends JPanel implements ActionListener{
     int x = 100 ;
-    int start_angle ;
+    int start_angle = 0;
     public RollingBall(){
         Timer t = new Timer(50, this);
         t.start();
@@ -12,7 +12,7 @@ public class RollingBall extends JPanel implements ActionListener{
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         g.drawOval(x,90,80,80);
-        g.fillArc(x,90, 80, 80,0,180);
+        g.fillArc(x,90, 80, 80,start_angle,180);
     }
 
     @Override
